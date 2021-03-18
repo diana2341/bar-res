@@ -1,0 +1,17 @@
+<h1>Tasks</h1>
+<ul>
+<% current_user.tasks.each do |task| %>
+    <li>
+        <p><%= task.task_name%></p> 
+        <p><%= task.due_date%></p> 
+        <%=link_to 'delete', task_path(task), method: :delete %> |
+        <%=link_to 'edit', edit_task_path(task) %>
+    </li>
+    <%end%>
+    <%unless current_user.tasks==nil%>
+    <%=link_to "make to do's", new_task_path %>
+
+<%end%>
+</ul>
+
+

@@ -15,7 +15,11 @@
             Online to-do list for today's workplace
             Plan, manage and track all your team's to-do's and checklists in one flexible software.
             </p>
+            <% if logged_in? %>
+            <%= link_to "My Tasks", tasks_path, class:"btn btn-secondary" %>
+            <% else %>
             <%= link_to "Get Started", new_user_path, class:"btn btn-secondary" %>
+            <%end%>
             </div>
         </div>
     </div>   
